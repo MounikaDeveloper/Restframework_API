@@ -1,0 +1,19 @@
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+ID:<input type="text" name="id" placeholder="ID">
+    Name:<input type="text" name="name" placeholder="real name" required><br>
+    Password:<input type="password" name="password" placeholder="Password"><br>
+    TimeZone:
+    <select name="tz">
+	<option value="1">International Date Line West</option>
+        <option value="2">America/Los_Angeles</option>
+        <option value="3">Asia/Kolkata</option>
+
+</select>
+    <select name="id1">
+        {% for x in data %}
+            <option>{{ x.id }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Register</button>
+</form>

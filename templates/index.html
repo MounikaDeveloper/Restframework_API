@@ -1,0 +1,10 @@
+<html>
+<body>
+<form action="{% url 'validation' %}" method="post">
+    {% csrf_token %}
+ID:<input type="number" name="id" placeholder="id">
+PASSWORD:<input type="password" name="password" placeholder="Password">
+<button type="submit">Login</button>
+    </form>
+</body>
+</html>
